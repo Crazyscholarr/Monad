@@ -80,7 +80,7 @@ pip install -r requirements.txt
 4. Thêm dữ liệu của bạn vào các file sau:
     ```data/private_keys.txt ```- Một khóa riêng trên mỗi dòng
     ```data/proxies.txt ```- Một proxy trên mỗi dòng (định dạng: user:pass@ip:port)
-Chạy bot
+### Chạy bot
 ```bash
 python main.py
 
