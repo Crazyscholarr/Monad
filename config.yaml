@@ -1,0 +1,204 @@
+# --------------------------- #
+# PHẦN CÀI ĐẶT
+# --------------------------- #
+SETTINGS:
+    # số luồng đồng thời
+    THREADS: 1
+    # số lần thử lại cho BẤT KỲ hành động nào
+    ATTEMPTS: 3
+    # phạm vi tài khoản.
+    # MẶC ĐỊNH: [0, 0] - tất cả tài khoản
+    # [3, 5] - chỉ tài khoản 3, 4, 5
+    # [7, 7] - chỉ tài khoản 7
+    ACCOUNTS_RANGE: [0, 0]
+    # CHỈ HOẠT ĐỘNG NẾU ACCOUNTS_RANGE LÀ [0, 0]
+    # tài khoản cụ thể để sử dụng. 
+    # MẶC ĐỊNH: [] - tất cả tài khoản
+    # Ví dụ: [1, 4, 6] - bot sẽ chỉ sử dụng tài khoản 1, 4 và 6
+    EXACT_ACCOUNTS_TO_USE: []
+    # tạm dừng giữa các lần thử
+    PAUSE_BETWEEN_ATTEMPTS: [3, 30]
+    # tạm dừng giữa các lần hoán đổi
+    PAUSE_BETWEEN_SWAPS: [3, 30]
+    # tạm dừng tính bằng giây giữa các tài khoản
+    RANDOM_PAUSE_BETWEEN_ACCOUNTS: [3, 30]
+    # tạm dừng tính bằng giây giữa các hành động
+    RANDOM_PAUSE_BETWEEN_ACTIONS: [3, 30]
+    # tạm dừng ngẫu nhiên trước khi bắt đầu mỗi tài khoản
+    # để đảm bảo rằng tất cả tài khoản sẽ bắt đầu vào các thời điểm khác nhau
+    RANDOM_INITIALIZATION_PAUSE: [5, 30]
+    # hệ số tạm dừng cho các hành động trình duyệt
+    BROWSER_PAUSE_MULTIPLIER: 1.5
+    # cài đặt Telegram
+    TELEGRAM_BOT_TOKEN: '8187013135:AAGYxndkDYO6pk4bW3G0if4t2oOTYGmuvfo'
+    TELEGRAM_USERS_IDS: [1264273114]
+
+# --------------------------- #
+# PHẦN QUY TRÌNH
+# --------------------------- #
+FLOW:
+    # số lần hoán đổi. bean, ambient, monad, v.v.
+    NUMBER_OF_SWAPS: [1, 1]
+    # phần trăm số dư để hoán đổi
+    PERCENT_OF_BALANCE_TO_SWAP: [5, 15]
+
+# --------------------------- #
+# CÁC PHẦN KHÁC
+# --------------------------- #
+DISPERSE:
+    # nếu số dư của tài khoản chính THẤP HƠN giá trị này
+    # bot sẽ phân phối token từ tài khoản farm sang tài khoản chính
+    MIN_BALANCE_FOR_DISPERSE: [0.4, 0.5]
+
+DUSTED:
+    CLAIM: true  # hoặc false để tắt việc nhận thưởng
+    SKIP_TWITTER_VERIFICATION: true
+
+APRIORI:
+    AMOUNT_TO_STAKE: [0.0001, 0.0003]
+    STAKE: true
+    UNSTAKE: true
+
+MAGMA:
+    AMOUNT_TO_STAKE: [0.0001, 0.0003]
+    STAKE: true
+    UNSTAKE: true
+
+KINTSU:
+    # TỐI THIỂU LÀ 0.01 $MON
+    AMOUNT_TO_STAKE: [0.01, 0.02]
+    STAKE: true
+    UNSTAKE: true
+
+GASZIP:
+    NETWORKS_TO_REFUEL_FROM: ["Arbitrum", "Base", "Optimism"]
+    AMOUNT_TO_REFUEL: [0.0001, 0.00015]
+    MINIMUM_BALANCE_TO_REFUEL: 0.5
+    WAIT_FOR_FUNDS_TO_ARRIVE: true
+    MAX_WAIT_TIME: 999999
+    BRIDGE_ALL: false
+    BRIDGE_ALL_MAX_AMOUNT: 0.01
+
+MEMEBRIDGE:
+    NETWORKS_TO_REFUEL_FROM: ["Arbitrum", "Base", "Optimism"]
+    AMOUNT_TO_REFUEL: [0.0001, 0.00015]
+    MINIMUM_BALANCE_TO_REFUEL: 0.5
+    WAIT_FOR_FUNDS_TO_ARRIVE: true
+    MAX_WAIT_TIME: 999999
+    BRIDGE_ALL: false
+    BRIDGE_ALL_MAX_AMOUNT: 0.01
+
+CRUSTY_SWAP:
+    NETWORKS_TO_REFUEL_FROM: ["Arbitrum", "Optimism", "Base"]
+    AMOUNT_TO_REFUEL: [0.0001, 0.00015]
+    MINIMUM_BALANCE_TO_REFUEL: 99999
+    WAIT_FOR_FUNDS_TO_ARRIVE: true
+    MAX_WAIT_TIME: 999999
+    BRIDGE_ALL: false
+    BRIDGE_ALL_MAX_AMOUNT: 0.01
+    SELL_PERCENT_OF_BALANCE: [50, 80]
+    SELL_MAXIMUM_AMOUNT: 100
+
+TESTNET_BRIDGE:
+    NETWORKS_TO_REFUEL_FROM: ["Arbitrum", "Optimism"]
+    AMOUNT_TO_REFUEL: [0.0002, 0.0003]
+    MINIMUM_BALANCE_TO_REFUEL: 5.0
+    WAIT_FOR_FUNDS_TO_ARRIVE: true
+    MAX_WAIT_TIME: 999999
+    BRIDGE_ALL: false
+    BRIDGE_ALL_MAX_AMOUNT: 0.01
+
+NOSTRA:
+    PERCENT_OF_BALANCE_TO_DEPOSIT: [3, 15]
+    DEPOSIT: true
+    BORROW: true
+    REPAY: true
+    WITHDRAW: true
+
+OCTO_SWAP:
+    SWAP_ALL_TO_MONAD: true
+
+SHMONAD:
+    BUY_AND_STAKE_SHMON: true
+    UNSTAKE_AND_SELL_SHMON: true
+    # phần trăm số dư để hoán đổi trên shmonad.xyz
+    PERCENT_OF_BALANCE_TO_SWAP: [2, 3]
+
+ORBITER:
+    AMOUNT_TO_BRIDGE: [0.1, 0.2]
+    BRIDGE_ALL: true
+    WAIT_FOR_FUNDS_TO_ARRIVE: true
+    MAX_WAIT_TIME: 999999999
+
+LILCHOGSTARS:
+    MAX_AMOUNT_FOR_EACH_ACCOUNT: [1, 3]
+
+# monadking hoặc monadking_unlocked 
+MONADKING:
+    MAX_AMOUNT_FOR_EACH_ACCOUNT: [1, 3]
+
+FRONT_RUNNER:
+    MAX_AMOUNT_TRANSACTIONS_FOR_ONE_RUN: [1, 3]
+    PAUSE_BETWEEN_TRANSACTIONS: [10, 30]
+
+MAGICEDEN:
+    NFT_CONTRACTS: [
+        ""
+    ]
+
+FAUCET:
+    # tùy chọn
+    USE_SOLVIUM_FOR_CLOUDFLARE: false
+    SOLVIUM_API_KEY: xxxxxxxxxxxxxxxxxxxxxxxx
+    USE_CAPSOLVER_FOR_CLOUDFLARE: true
+    # nếu bạn muốn sử dụng capsolver, hãy tạo tài khoản tại https://capsolver.com
+    CAPSOLVER_API_KEY: CAP-xxx
+
+    # Sử dụng Nocaptcha theo mặc định
+    NOCAPTCHA_API_KEY: ""
+    # nếu không hoạt động mà không có proxy, đặt proxy tại đây
+    # định dạng: username:password@ip:port
+    PROXY_FOR_NOCAPTCHA: "x"
+    
+# --------------------------- #
+# PHẦN SÀN GIAO DỊCH
+# --------------------------- #
+EXCHANGES:
+    name: "OKX"  # Hỗ trợ: "OKX", "BITGET"
+    apiKey: ''
+    secretKey: ''
+    passphrase: ''  
+    withdrawals:
+        - currency: "ETH" # CHỈ ETH
+          networks: ["Arbitrum", "Base", "Optimism"] # ["Arbitrum", "Base", "Optimism"]
+          min_amount: 0.0003
+          max_amount: 0.0004
+          max_balance: 0.005
+          wait_for_funds: true
+          max_wait_time: 99999  # tính bằng giây
+          retries: 3
+
+MONAIYAKUZA:
+    MAX_PER_ACCOUNT: [1, 1]
+
+NARWHAL_FINANCE:
+    # SỐ LƯỢNG USDT ĐỂ CHƠI
+    AMOUNT_USDT_FOR_BET: [5, 50]
+    # Sẽ chơi số lượng cược ngẫu nhiên và chọn trò chơi ngẫu nhiên
+    NUMBER_OF_BETS_PER_START: [1, 3]
+
+    PLAY_SLOTS: true
+    PLAY_DICE: true
+    PLAY_COINFLIP: true
+
+FLAPSH:
+    # Số lượng MON chúng ta sẽ mua memcoin
+    AMOUNT_TO_PAY: [0.0001, 0.0003]
+    # số lượng memcoin chúng ta sẽ mua mỗi lần chạy
+    NUMBER_OF_MEMCOINS_TO_BUY: [1, 3]
+    # Địa chỉ của các memcoin chúng ta sẽ mua (lấy ngẫu nhiên từ danh sách)
+    # nếu danh sách trống, bot sẽ phân tích danh sách memcoin từ flapsh.xyz
+    TOKEN_ADDRESS: []
+
+MADNESS:
+    SWAP_ALL_TO_MONAD: false
